@@ -22,6 +22,7 @@ class AMLtoGraph(InMemoryDataset):
                  pre_transform: Optional[Callable] = None):
         self.edge_window_size = edge_window_size
         super().__init__(root, transform, pre_transform)
+        self.process() 
         self.data, self.slices = torch.load(self.processed_paths[0])
 
     @property
